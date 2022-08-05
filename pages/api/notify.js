@@ -1,4 +1,5 @@
 import { Receiver } from "@upstash/qstash"
+import { buffer } from "micro"
 
 export const config = {
   api: { bodyParser: false },
