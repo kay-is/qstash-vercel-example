@@ -1,5 +1,5 @@
 import { Receiver } from "@upstash/qstash"
-import { buffer } from "micro"
+import { text } from "micro"
 
 export const config = {
   api: { bodyParser: false },
@@ -11,7 +11,7 @@ const qstashReceiver = new Receiver({
 })
 
 export default async function handler(request, response) {
-  const body = await buffer(request)
+  const body = await text(request)
 
   console.log(body)
 
