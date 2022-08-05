@@ -13,6 +13,8 @@ const qstashReceiver = new Receiver({
 export default async function handler(request, response) {
   const body = await buffer(request)
 
+  console.log(body)
+
   const isValid = await qstashReceiver.verify({
     signature: request.headers["Upstash-Signature"],
     body,
