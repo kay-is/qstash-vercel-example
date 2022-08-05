@@ -6,6 +6,7 @@ export default async function handler(request, response) {
   if (request.method !== "POST") return response.end()
 
   const { host } = request.headers
+  console.log(request.body)
   const body = JSON.parse(request.body)
 
   const qstashResponse = await qstashClient.publishJSON({
